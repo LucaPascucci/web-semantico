@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+ xmlns:dbpedia="http://dbpedia.org/ontology/"
+ xmlns:res="http://lucapascucci.com/ontology/">
+ 
+ <!--RDFS-->
+
+ <!--Class definition-->
+ 
+ <rdfs:Class rdf:ID="TrackDay">
+    <rdfs:comment>Evento sportivo che permette ai partecipanti di girare in pista</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="dbpedia:SportsEvent"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Manager">
+    <rdfs:comment>Organizzatore del TrackDay</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="foaf:Organization"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="RaceCircuit">
+    <rdfs:comment>Tracciato, pista, circuito di velocità, autodromo, tracciato stradale chiuso alla circolazione</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Round">
+    <rdfs:comment>Turni-pista per dividere i partecipanti</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="JuniorRound">
+    <rdfs:comment>Turno-pista per i partecipanti con meno esperienza e/o con veicoli meno prestazionali</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Round"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="SeniorRound">
+    <rdfs:comment>Turno-pista per i partecipanti con maggiore esperienza e/o con veicoli più prestazionali</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Round"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Participant">
+    <rdfs:comment>Partecipante al TrackDay</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Team">
+    <rdfs:comment>Motorsport Team</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Participant"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="PrivateParticipant">
+    <rdfs:comment>Una qualsiasi persona che partecipa all'evento</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Participant"/>
+    <rdfs:subClassOf rdf:resource="foaf:Person"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Vehicle">
+    <rdfs:comment>Vettura, auto, moto, con i requisiti necessari per girare in pista</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Kart">
+    <rdfs:comment>Piccoli veicoli a quattro ruote dal telaio in tubolare d'acciaio, privi di sospensioni e dotati di motore a combustione interna</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Vehicle"/>
+  </rdfs:Class>
+ 
+ <rdfs:Class rdf:ID="Road">
+    <rdfs:comment>Veicolo per uso stradale munito di ruote e spinto da un motore solitamente a scoppio</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Vehicle"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Racing">
+    <rdfs:comment>Veicolo realizzato secondo un regolamento tecnico specifico che varia in base alla tipologia della competizione, utilizzabile in un autodromo o su un tracciato stradale chiuso alla circolazione</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Vehicle"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="Tyres">
+    <rdfs:comment>Gli pneumatici, generalmente detto copertone o gomma, è l'elemento che viene montato sulle ruote e che permette l'aderenza del veicolo sulla strada</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="RoadTyres">
+    <rdfs:comment>Pneumatico studiato, per uso stradale, in modo da offrire la migliore guidabilità </rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Tyres"/>
+  </rdfs:Class>
+ 
+ <rdfs:Class rdf:ID="Semi-SlickTyres">
+    <rdfs:comment>Pneumatico studiato, per uso stradale e sportivo, in modo da offrire la migliore tenuta</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Tyres"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:ID="SlickTyres">
+    <rdfs:comment>Pneumatico che non presenta scanalature, impiegato specialmente negli Sport motoristici di velocità su circuito</rdfs:comment>
+  	<rdfs:subClassOf rdf:resource="#Tyres"/>
+  </rdfs:Class>
+ 
+ <!--Properties definition-->
+ 
+ <rdf:Property rdf:ID="Name">
+    <rdfs:comment>Name del TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackDay"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="Price">
+    <rdfs:comment>Costo per partecipare al TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackDay"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="Date">
+      <rdfs:comment>Data del TrackDay, espressa in "gg/mm/yyyy"</rdfs:comment>
+      <rdfs:domain rdf:resource="#TrackDay"/>
+      <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasCircuit">
+    <rdfs:comment>Circuito dove ha luogo il TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackDay"/>
+    <rdfs:range rdf:resource="#RaceCircuit"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasOrganizer">
+    <rdfs:comment>Organizzatore del TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackDay"/>
+    <rdfs:range rdf:resource="#Manager"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasRound">
+    <rdfs:comment>Turni-pista definiti per il TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackDay"/>
+    <rdfs:range rdf:resource="#Round"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasParticipant">
+    <rdfs:comment>Partecipante del TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#TrackDay"/>
+    <rdfs:range rdf:resource="#Participant"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasName">
+    <rdfs:comment>Nome del circuito</rdfs:comment>
+    <rdfs:domain rdf:resource="#RaceCircuit"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasLength">
+    <rdfs:comment>Lunghezza, in metri, del circuito</rdfs:comment>
+    <rdfs:domain rdf:resource="#RaceCircuit"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="RightCorners">
+    <rdfs:comment>Numero di curve a destra</rdfs:comment>
+    <rdfs:domain rdf:resource="#RaceCircuit"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="LeftCorners">
+    <rdfs:comment>Numero di curve a sinistra</rdfs:comment>
+    <rdfs:domain rdf:resource="#RaceCircuit"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="Location">
+    <rdfs:comment>Città dove è stato realizzato il circuito</rdfs:comment>
+    <rdfs:domain rdf:resource="#RaceCircuit"/>
+    <rdfs:range rdf:resource="dbpedia:City"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="StartTime">
+    <rdfs:comment>Orario di inizio turno</rdfs:comment>
+    <rdfs:domain rdf:resource="#Round"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="EndTime">
+    <rdfs:comment>Orario di fine turno</rdfs:comment>
+    <rdfs:domain rdf:resource="#Round"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasLinkedRound">
+    <rdfs:comment>Turno per girare in pista assegnato al partecipante</rdfs:comment>
+    <rdfs:domain rdf:resource="#Participant"/>
+    <rdfs:range rdf:resource="#Round"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="TeamName">
+    <rdfs:comment>Nome del team</rdfs:comment>
+    <rdfs:domain rdf:resource="#Team"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasVehicle">
+    <rdfs:comment>Veicolo che utilizza il partecipante al TrackDay</rdfs:comment>
+    <rdfs:domain rdf:resource="#Participant"/>
+    <rdfs:range rdf:resource="#Vehicle"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="Exemplary">
+    <rdfs:comment>Nome del veicolo</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vehicle"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="HasTyres">
+    <rdfs:comment>Pneumatici montati sul veicolo</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vehicle"/>
+    <rdfs:range rdf:resource="#Tyres"/>
+  </rdf:Property>
+  
+  <rdf:Property rdf:ID="Model">
+    <rdfs:comment>Modello di gomme</rdfs:comment>
+    <rdfs:domain rdf:resource="#Tyres"/>
+    <rdfs:range rdf:resource="rdfs:Literal"/>
+  </rdf:Property>
+ 
+ <!--RDF-->
+ 
+ <res:TrackDay res:ID="TD0000001">
+ 	<res:Name>Motor 1 Day</res:Name>
+ 	<res:Price>150€</res:Price>
+    <res:Date>22/03/2018</res:Date>
+ 	<res:HasCircuit rdf:resource="#RC0000001"/>
+ 	<res:HasOrganizer rdf:resource="#M0000001"/>
+ 	<res:HasParticipant>
+      <rdf:Bag>
+        <rdf:li rdf:resource="#PSCLCU93A07G479R"/> 
+        <rdf:li rdf:resource="#UBM"/>
+      </rdf:Bag>
+    </res:HasParticipant>
+    <res:HasRound>
+      <rdf:Bag>
+        <rdf:li rdf:resource="#R0001" /> 
+        <rdf:li rdf:resource="#R0002" />
+      </rdf:Bag>
+    </res:HasRound> 
+ </res:TrackDay>
+ 
+ <res:RaceCircuit res:ID="RC0000001">
+ 	<res:HasName>Autodromo di Modena</res:HasName>
+ 	<res:Length>2007</res:Length>
+ 	<res:RightCorners>8</res:RightCorners>
+ 	<res:LeftCorners>5</res:LeftCorners>
+ 	<res:Location rdf:resource="http://dbpedia.org/page/Modena"/>
+ </res:RaceCircuit>
+ 
+ <res:PrivateParticipant rdf:ID="PSCLCU93A07G479R">
+  	<foaf:name>Luca Pascucci</foaf:name>
+	<foaf:title>Mr</foaf:title>
+	<foaf:givenname>Luca</foaf:givenname>
+	<foaf:family_name>Pascucci</foaf:family_name>
+	<foaf:phone rdf:resource="tel:3334560298"/>
+	<res:HasVehicle rdf:resource="#V0000001"/>
+	<res:HasLinkedRound rdf:resource="#R0002"/>
+  </res:PrivateParticipant>
+ 
+ <res:Manager res:ID="M0000001">
+ 	<foaf:name>OmniAuto</foaf:name>
+ </res:Manager>
+ 
+ <res:Team rdf:ID="UBM">
+  	<res:TeamName>Unibo Motorsport</res:TeamName>
+	<res:HasVehicle rdf:resource="#V0000002"/>
+	<res:HasLinkedRound rdf:resource="#R0001"/>
+  </res:Team>
+  
+  <res:SeniorRound rdf:ID="R0001">
+  	<res:StartTime>10:10</res:StartTime>
+  	<res:EndTime>10:45</res:EndTime>
+  </res:SeniorRound>
+  
+  <res:JuniorRound rdf:ID="R0002">
+  	<res:StartTime>11:00</res:StartTime>
+  	<res:EndTime>11:35</res:EndTime>
+  </res:JuniorRound>
+ 
+ <res:Racing rdf:ID="V0000002">
+ 	<res:Exemplary>MW4-15</res:Exemplary>
+ 	<res:HasTyres rdf:resource="#T00001"/>
+ </res:Racing>
+ 
+ <res:Road rdf:ID="V0000001">
+ 	<res:Exemplary>BMW 320d</res:Exemplary>
+ 	<res:HasTyres rdf:resource="#T00002"/>
+ </res:Road>
+ 
+ <res:RoadTyres rdf:ID="T00002">
+ 	<res:Model>Toyo Proxes CF2</res:Model>
+ </res:RoadTyres>
+ 
+ <res:SlickTyres rdf:ID="T00001">
+ 	<res:Model>Hoosier Asphalt Oval</res:Model>
+ </res:SlickTyres>
+ 
+ </rdf:RDF>

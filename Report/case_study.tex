@@ -1,0 +1,15 @@
+\chapter{Track Day Event Ontology}
+Lo scopo di questo progetto è di approfondire ed utilizzare le tecnologie del Web Semantico per creare un'ontologia. Verrà descritto passo per passo come è stata realizzata, quali strumenti sono stati utilizzati e quali tecniche impiegate. 
+\\\par
+L'ontologia che si intende modellare riguarda gli eventi di Track Day che rappresenta per molti appassionati di motori la possibilità di girare in pista con la propria auto a prezzi solitamente contenuti. In particolare si vuole avere la possibilità di definire una pista con le sue caratteristiche principali (come ad esempio luogo, lunghezza, curve a destra o sinistra) dove si terrà l’evento, l’organizzatore responsabile dell’evento che può essere una persona come piuttosto un’organizzazione. Nell’evento vengono organizzati differenti turni per dare a tutti i partecipanti la possibilità di girare in pista. Esempi di triple di informazioni possono essere “L’evento X ha come partecipante la persona Y”, oppure “La persona Y ha come veicolo il mezzo Z” e così via.
+Una prima modellazione è stata effettuata con RDF/RDF Schema, che ci permette di esporre la sintassi per definire schemi e vocabolari per i metadati, oltre a poter definire una serie di triple come quelle mostrate precedentemente, tramite espressioni nella forma soggetto-predicato-oggetto.
+\\\par
+Tramite RDF/RDFS è possibile definire per esempio:
+\begin{itemize}
+\item rdfs:class: Definisce gruppi di individui che condividono alcune proprietà comuni. Ad esempio Luca e Filippo possono essere entrambi istanze della classe \textit{Participant}, come si vedrà in seguito;
+\item rdfs:subclassOf: Fornisce la possibilità di organizzare le classi in gerarchie di specializzazione. Per esempio, la classe \textit{SemiSlickTyres} è sottoclasse della classe \textit{Tyres};
+\item rdf:property: Rappresenta la parte di predicato della tripla soggetto-predicato-oggetto. Per esempio, le classi \textit{Participant} e \textit{Vehicle} sono collegate dalla proprietà \textit{hasVehicle} (Participant hasVehicle Vehicle);
+\item rdf:domain: Definisce la classe che fa da soggetto per la proprietà;
+\item rdf:range: Definisce la classe che fa da oggetto per la proprietà.
+\end{itemize}
+

@@ -1,0 +1,536 @@
+Prefix(:=<http://www.unibo.it/lucapascucci/ontology/trackdayevent#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology>
+Import(<http://dbpedia.org/ontology/>)
+Import(<http://xmlns.com/foaf/0.1/>)
+Annotation(<http://purl.org/dc/elements/1.1/description> "La Track Day Event (TDE) Ontology descrive una parte del dominio degli eventi di Track Day"^^rdfs:Literal)
+Annotation(<http://purl.org/dc/elements/1.1/title> "Track Day Event Ontology"^^rdfs:Literal)
+Annotation(rdfs:isDefinedBy "Luca Pascucci")
+Annotation(owl:versionInfo "1.0"^^xsd:decimal)
+
+Declaration(Class(<http://dbpedia.org/ontology/City>))
+Declaration(Class(<http://dbpedia.org/ontology/SportsEvent>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CheapTrackDay>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ExpensiveTrackDay>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>))
+Declaration(Class(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>))
+Declaration(Class(<http://www.w3.org/2000/10/swap/pim/contact#Person>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitOf>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#IsOrganizerOf>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LocationOf>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ParticipantOf>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundOf>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundParticipants>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TyresOf>))
+Declaration(ObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#VehicleOf>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime>))
+Declaration(DataProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BLF>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Bologna>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MYF>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Modena>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#OMNA>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TYCF2>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM>))
+Declaration(NamedIndividual(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitOf>)
+
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitOf> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitOf>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> "Circuito dove ha luogo il TrackDay"^^rdfs:Literal)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> "Turno per girare in pista assegnato al partecipante"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundParticipants>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> "Organizzatore del TrackDay"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#IsOrganizerOf>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> "Partecipante del TrackDay"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ParticipantOf>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> "Turni-pista definiti per il TrackDay"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundOf>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> "Pneumatici montati sul veicolo"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TyresOf>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> "Veicolo che utilizza il partecipante al TrackDay"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#VehicleOf>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#IsOrganizerOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#IsOrganizerOf>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#IsOrganizerOf>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> "Città dove è stato realizzato il circuito"^^rdfs:Literal)
+InverseObjectProperties(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LocationOf>)
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location>)
+ObjectPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>)
+ObjectPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> <http://dbpedia.org/ontology/City>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LocationOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LocationOf>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LocationOf>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ParticipantOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ParticipantOf>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ParticipantOf>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundOf>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundOf>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundParticipants> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundParticipants>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoundParticipants>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TyresOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TyresOf>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TyresOf>)
+
+# Object Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#VehicleOf> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#VehicleOf>)
+
+AsymmetricObjectProperty(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#VehicleOf>)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName> "Nome del circuito"^^rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date> "Data del TrackDay, espressa in \"gg/mm/yyyy\""^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> "Orario di fine turno"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName> "Nome dell'evento"^^rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> "Nome del veicolo"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners> "Numero di curve a sinistra"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length> "Lunghezza, in metri, del circuito"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> "Modello di gomme"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> "Costo per partecipare al TrackDay"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> xsd:integer)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners> "Numero di curve a destra"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> "Orario di inizio turno"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> rdfs:Literal)
+
+# Data Property: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName> "Nome del team"^^rdfs:Literal)
+DataPropertyDomain(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team>)
+DataPropertyRange(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName> rdfs:Literal)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CheapTrackDay> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CheapTrackDay>)
+
+EquivalentClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CheapTrackDay> ObjectIntersectionOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> DataSomeValuesFrom(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> DatatypeRestriction(xsd:integer xsd:maxExclusive "200"^^xsd:integer))))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ExpensiveTrackDay> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ExpensiveTrackDay>)
+
+EquivalentClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ExpensiveTrackDay> ObjectIntersectionOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> DataSomeValuesFrom(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> DatatypeRestriction(xsd:integer xsd:minInclusive "200"^^xsd:integer))))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound> "Turno-pista per i partecipanti con meno esperienza e/o con veicoli meno prestazionali"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart> "Piccoli veicoli a quattro ruote dal telaio in tubolare d'acciaio, privi di sospensioni e dotati di motore a combustione interna"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager> "Organizzatore del TrackDay"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager> <http://xmlns.com/foaf/0.1/Organization>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant> "Partecipante al TrackDay"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant> ObjectMinCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant> ObjectMinCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> "Una qualsiasi persona che partecipa all'evento"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> <http://xmlns.com/foaf/0.1/Person>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> "Tracciato, pista, circuito di velocità, autodromo, tracciato stradale chiuso alla circolazione"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> ObjectExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> <http://dbpedia.org/ontology/City>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners>))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing> "Veicolo realizzato secondo un regolamento tecnico specifico che varia in base alla tipologia della competizione, utilizzabile in un autodromo o su un tracciato stradale chiuso alla circolazione"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road> "Veicolo per uso stradale munito di ruote e spinto da un motore solitamente a scoppio"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres> "Pneumatico studiato, per uso stradale, in modo da offrire la migliore guidabilità"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round> "Turni-pista per dividere i partecipanti"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime>))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres> "Pneumatico studiato, per uso stradale e sportivo, in modo da offrire la migliore tenuta"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>)
+DisjointClasses(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Semi-SlickTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound> "Turno-pista per i partecipanti con maggiore esperienza e/o con veicoli più prestazionali"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres> "Pneumatico che non presenta scanalature, impiegato specialmente negli Sport motoristici di velocità su circuito"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>)
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team> "Motorsport Team"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName>))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay>)
+
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> <http://dbpedia.org/ontology/SportsEvent>)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> ObjectMinCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Participant>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> ObjectMinCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Round>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> ObjectExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> ObjectExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Manager>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> xsd:integer))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres> "Gli pneumatici, generalmente detto copertone o gomma, è l'elemento che viene montato sulle ruote e che permette l'aderenza del veicolo sulla strada"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model>))
+
+# Class: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle>)
+
+AnnotationAssertion(rdfs:comment <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle> "Vettura, auto, moto, con i requisiti necessari per girare in pista"^^rdfs:Literal)
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle> ObjectMinCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Tyres>))
+SubClassOf(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Vehicle> DataExactCardinality(1 <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary>))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Modena>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena> "Autodromo di Modena"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena> "5"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena> "2007"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena> "8"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BLF> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BLF>)
+
+ClassAssertion(<http://xmlns.com/foaf/0.1/Organization> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BLF>)
+DataPropertyAssertion(<http://xmlns.com/foaf/0.1/name> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BLF> "Bologna Fiere"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Road> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TYCF2>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D> "BMW 320d Cabrio"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Bologna> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Bologna>)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Bologna> "http://live.dbpedia.org/page/Bologna")
+ClassAssertion(<http://dbpedia.org/ontology/City> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Bologna>)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RaceCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Location> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Bologna>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#CircuitName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking> "Circuito interno di Bologna Fiere"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#LeftCorners> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking> "4"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Length> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking> "1000"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RightCorners> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking> "0"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO> "Hoosier Asphalt Oval"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#AutodromoModena>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#OMNA>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> "10/05/2018"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> "Motor1Days"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#M1D> "500"^^xsd:integer)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TrackDay> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasCircuit> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BolognaFiereParking>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasOrganizer> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BLF>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Date> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> "10/09/2018"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EventName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> "MotorShow Bologna"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Price> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MTS> "100"^^xsd:integer)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15> "UniBo Motorsport Formula MW4-15"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MYF> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MYF>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SlickTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MYF>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MYF> "Moyo Fucsia"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Modena> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Modena>)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Modena> "http://live.dbpedia.org/page/Modena")
+ClassAssertion(<http://dbpedia.org/ontology/City> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Modena>)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#OMNA> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#OMNA>)
+
+ClassAssertion(<http://xmlns.com/foaf/0.1/Organization> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#OMNA>)
+DataPropertyAssertion(<http://xmlns.com/foaf/0.1/name> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#OMNA> "OmniAuto"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#BMW320D>)
+DataPropertyAssertion(<http://xmlns.com/foaf/0.1/familyName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R> "Pascucci"^^rdfs:Literal)
+DataPropertyAssertion(<http://xmlns.com/foaf/0.1/firstName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PSCLCU93A07G479R> "Luca"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#JuniorRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1> "11:00"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND1> "9:00"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2> "16:00"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2> "14:00"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SeniorRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#EndTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3> "13:00"^^rdfs:Literal)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#StartTime> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND3> "11:00"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Kart> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MYF>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX> "TonyKart - Rotax 125 Monomarcia"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#PrivateParticipant> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RTX>)
+DataPropertyAssertion(<http://xmlns.com/foaf/0.1/familyName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O> "Scatigna"^^rdfs:Literal)
+DataPropertyAssertion(<http://xmlns.com/foaf/0.1/firstName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#SCTLNZ95H04A944O> "Lorenzo"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TYCF2> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TYCF2>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#RoadTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TYCF2>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Model> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TYCF2> "Toyo Proxes CF2"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Team> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasLinkedRound> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#ROUND2>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#MW4-15>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasVehicle> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#TeamName> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM> "UniBo Motorsport Team"^^rdfs:Literal)
+
+# Individual: <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17> (<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17>)
+
+ClassAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Racing> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17>)
+ObjectPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HasTyres> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#HAO>)
+DataPropertyAssertion(<http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#Exemplary> <http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology#UBM17> "Felsinea = UniBoMotorsport17"^^rdfs:Literal)
+
+
+)

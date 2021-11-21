@@ -1,0 +1,20 @@
+\chapter{Scenario Iniziale}
+%\addcontentsline{toc}{chapter}{Stato dell'arte}
+Inizialmente è stato realizzato un grafo tramite la web app draw.io dove vengono riportate tutte le risorse ed entità che si intende modellare e le proprietà che le legano.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=14cm]{trackdayevent.png}
+	\caption{Grafo dell'ontologia}
+\end{figure}
+\\\par
+Come si può notare dal grafo, il punto centrale dello schema è la classe \textit{TrackDay}. Corrisponde ad un evento sportivo organizzato da un \textit{Manager} che permette di far girare in pista i partecipanti, essa è associata anche ad un nome, una data ed un prezzo che rappresenta il costo per partecipare all’evento e si collega all’ontologia \textbf{DBpedia} essendo sottoclasse della classe \textit{SocialEvent}. 
+\\\par
+Ogni istanza di \textit{TrackDay} è associata ad un \textit{RaceCircuit} classe che rappresenta un circuito dove avrà luogo l’evento. Del circuito vengono memorizzati dati prettamente “informativi” come nome, lunghezza (in metri), numero di curve a destra e sinistra e la città dove si trova utilizzando un'istanza di \textit{City}, importata da \textbf{DBpedia}. 
+\\\par
+Il Manager, organizzatore del \textit{TrackDay} può essere un'organizzazione per questo motivo è sottoclasse di \textit{Organization}, importata dall’ontologia Friend Of a Friend (FOAF). All'evento è associata la classe \textit{Participant} che identifica un partecipante al track day che può essere un privato oppure un team, con il primo sottoclasse della classe \textit{Person} importata nuovamente dall'ontologia \textbf{FOAF}. 
+\\\par
+Sempre all'evento è associata la classe \textit{Round} che rappresenta il turno pista ideato per definire dei momenti dove i partecipanti possono utilizzare il tracciato specificando un orario di inizio turno e di fine turno. Il \textit{Round} può essere di due tipi \textit{JuniorRound} o \textit{SeniorRound} pensati per separare i partecipanti in base alle loro abilità ed esperienze di guida. Da notare il collegamento tra le classi \textit{TrackDay}, \textit{Participant} e \textit{Round} che rappresenta al meglio il fulcro dell'evento. In ogni \textit{TrackDay}, come spiegato in precedenza, vengono creati dei turni temporizzati per evitare che i partecipanti possano girare tutti contemporaneamente e per distinguere tra piloti amatoriali ed esperti, successivamente a questa distinzione vengono collegati i \textit{Participant} ai \textit{Round} più idonei. 
+\\\par
+L'ultima parte del grafo contiene le classi \textit{Vehicle} e \textit{Tyres} dove la prima identifica il veicolo utilizzato dal partecipante per girare in pista mentre la seconda specifica le gomme montate sul veicolo. Per ognuna sono state create delle sottoclassi che rappresentano delle specializzazioni, difatti sotto il punto di vista dei veicoli sono state effettuate 3 separazioni in kart, veicoli stradali e veicoli da corsa mentre per le gomme sono state create le classi che identificano gomme stradali, gomme sportive, gomme da corsa.
+\\\par
+La modellazione effettuata tramite RDF/RDFS è osservabile nel dettaglio all'interno del file \textit{trackdayevent.rdf} allegato. Esso è stato scritto manualmente tramite l'editor rdfEditor con sintassi RDF/XML, ed è stato poi correttamente validato tramite l'RDF Validator del W3C raggiungibile al sito https://www.w3.org/RDF/Validator/

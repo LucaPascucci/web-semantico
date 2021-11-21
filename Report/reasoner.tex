@@ -1,0 +1,15 @@
+\chapter{L'utilizzo del reasoner}
+%\addcontentsline{toc}{chapter}{Stato dell'arte}
+Un reasoner è un software in grado di svolgere dei ragionamenti su delle basi di conoscenza adeguatamente formalizzate. Il ragionamento è inteso come la capacità di elaborare la base di conoscenza secondo alcune regole, in modo da validare ed analizzare la base di conoscenza stessa. 
+\\\par
+Il reasoner può essere utilizzato sia per la validazione, ovvero il controllo di coerenza interna della base di conoscenza, ma anche per l’inferenza. Per mostrare più nel dettaglio le potenzialità del reasoner, sono state create due classi: \textit{CheapTrackDay} e \textit{ExpensiveTrackDay}. 
+\\\par
+La prima rappresenta un evento di Track day con prezzo minore di 200 euro e la seconda con un prezzo maggiore di 200 euro. Come si può notare dall’immagine sottostante, è sufficiente esprimente la nuova classe come equivalente a: \textit{TrackDay} and (\textit{Price} some xsd:integer[ $>=200$]).
+\\
+Facendo partire il reasoner, esso riconosce che la nuova classe è sottoclasse di \textit{TrackDay} e trova anche un’istanza definita precedentemente, tramite inferenza.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{Reasoner.JPG}
+	\caption{Utilizzo del reasoner sulla classe \textit{ExpensiveTrackDay}}
+\end{figure}
+\clearpage

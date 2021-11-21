@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage[final]{listings}
+\usepackage{color}
+\usepackage{caption}
+
+\graphicspath{{images/}}
+
+\captionsetup[lstlisting]{position=bottom}
+
+\renewcommand{\lstlistingname}{Listato}
+
+%Definizione dei colori
+\definecolor{keywords}{rgb}{0.5,0,0.35}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+\definecolor{dkgreen}{rgb}{0.4,0.4,0.4}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{dkgray}{rgb}{0.2,0.2,0.2}
+\definecolor{commentgray}{rgb}{0.6,0.6,0.6}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% Per evidenziare future parti di codice java
+\lstset{language=Java,
+	frame=single,
+	captionpos=b,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\fontsize{10}{10}\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{keywords},
+	commentstyle=\color{greencomments},
+	stringstyle=\color{redstrings},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	frame=single,
+	rulecolor=\color{black}
+}
+
+\pagestyle{headings}
+
+\begin{document}
+\input{cover}
+\tableofcontents
+\listoffigures
+%\listoftables
+\input{case_study}
+\input{scenario_iniziale}
+\input{sviluppo}
+\input{ontograf}
+\input{reasoner}
+\input{sparql}
+\input{conclusione}
+\end{document}

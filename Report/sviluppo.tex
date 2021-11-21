@@ -1,0 +1,125 @@
+\chapter{Sviluppo dell'ontologia - Protégé}
+%\addcontentsline{toc}{chapter}{Stato dell'arte}
+Dovendo specificare ulteriori vincoli ed esprimere una semantica più dettagliata riguardo alle informazioni inserite, il dominio è stato infine modellato con OWL.
+\\
+Per la moderazione dell’ontologia si è scelto di usare Protégé, un software free e open source, sviluppato dallo Stanford Center. Protègè, come Eclipse, è un framework per il quale vari progetti mettono a disposizione dei plugin; inoltre fornisce un'interfaccia grafica per definire ontologie. Essa comprende anche classificatori deduttivi per convalidare la consistenza dei modelli e inferire nuove informazioni sulla base dell'analisi di una ontologia. In particolare Protègè consente di modellare:
+\begin{itemize}
+\item Classi OWL;
+\item Object Property: proprietà che legano due oggetti;
+\item Data Property: proprietà che legano un oggetto ad un dato definito nel dizionario;
+\item Gerarchie.
+\end{itemize}
+\section{Modellazione dell’ontologia}
+Il primo passo per la modellazione dell'ontologia è la scelta del nome. Per questo progetto si è scelto Track Day Event, il cui acronimo è TDE. L’IRI dell’ontologia è http://www.unibo.it/lucapascucci/ontology/trackdayevent-ontology. Ovviamente si tratta di un IRI fittizio in quanto il progetto è a scopo didattico. Tuttavia, potrebbe essere sostituito in futuro con un IRI adeguato, semplicemente modificandolo dall'interfaccia di Protégé. 
+Si inseriscono poi quattro annotazioni, le prime due utilizzando il vocabolario Dublin Core:
+\begin{itemize}
+\item dc:Title : contiene il titolo dell'ontologia; 
+\item dc:Description : contiene la descrizione dell'ontologia;
+\item rdfs:isDefinedBy : contiene l'autore dell'ontologia;
+\item owl:versionInfo : contiene il numero della versione dell'ontologia.
+\end{itemize}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{Ontologia.JPG}
+	\caption{Schermata principale di Protégé che mostra le informazioni generali sull'ontologia}
+\end{figure}
+\clearpage
+La modellazione dell'ontologia procede poi con: 
+\begin{itemize}
+\item Importazione delle ontologie esterne;
+\item Modellazione delle classi e relative gerarchie;
+\item Modellazione delle object property e data property;
+\item Modellazione di vincoli e restrizioni tramite OWL;
+\item Inserimento degli individui nell'ontologia.
+\end{itemize}
+\section{Importazione di ontologie esterne}
+L'importazione di ontologie esterne consente di collegare l'ontologia del progetto al mondo esterno, in modo da integrarla con i linked data presenti attualmente sulla rete. I principali metodi per creare questi collegamenti sono:
+\begin{itemize}
+\item Utilizzare la classe rdfs:subClassOf: a partire da una classe di un'ontologia importata, si crea una sotto classe per quella classe, che viene poi utilizzata per l'ontologia; 
+\item Utilizzare la proprietà owl:equivalentClass: questa proprietà built-in collega una descrizione di una classe a quella di un’altra classe. Il significato di tale assioma è che le descrizioni delle due classi hanno la stessa estensione;
+\item Utilizzare la proprietà owl:sameAs: questa proprietà built-in collega un individuo ad un altro individuo. owl:sameAs indica che due URI si riferiscono attualmente alla stessa cosa e, di conseguenza, che gli individui hanno la stessa identità.
+\end{itemize}
+Nel corso di questo progetto verrà utilizzato il primo metodo proposto, ovvero la creazione di sottoclassi per classi importate. Protégé offre la possibilità di importare ontologie esterne sia da file salvato sul pc locale, che da remoto fornendogli l'URL.
+\\\\
+Come precedentemente illustrato nello scenario iniziale, sono state importate le seguenti ontologie: 
+\begin{itemize}
+\item \textbf{FOAF}: Friend Of A Friend è un'ontologia atta a descrivere persone, con le loro attività e le relazioni con altre persone e oggetti. FOAF permette a gruppi di persone di descrivere quel fenomeno noto come social network senza la necessità di un database centralizzato. FOAF è un vocabolario descrittivo espresso in Resource Description Framework (RDF) ed è definita usando Web Ontology Language (OWL);
+\item \textbf{dbo}: DBpedia è un progetto che mira a estrarre il contenuto strutturato dalle informazioni, creato come parte del progetto Wikipedia. Queste informazioni strutturate viene quindi reso disponibile sul World Wide Web. DBpedia consente agli utenti di interrogare semanticamente le relazioni e le proprietà associate con le risorse di Wikipedia, tra cui i collegamenti ad altri insiemi di dati correlati.
+\end{itemize}
+\section{Modellazione delle classi}
+Tutte le classi che verranno modellate saranno sottoclassi della classe owl:Thing. Si modellano le seguenti classi:
+\begin{itemize}
+\item TrackDay
+\item Manager, sottoclasse della classe foaf:Organization
+\item RaceCircuit
+\item Participant, suddivisa a sua volta in:
+\begin{itemize}
+\item Team
+\item Private Participant, sottoclasse della classe foaf:Person
+\end{itemize}
+\item Vehicle, suddivisa a sua volta in:
+\begin{itemize}
+\item Kart
+\item Road
+\item Racing
+\end{itemize}
+\item Tyres, suddivisa a sua volta in:
+\item RoadTyres
+\item Semi-SlickTyres
+\item SlickTyres
+\item Round, suddivisa a sua volta in:
+\begin{itemize}
+\item JuniorRound
+\item SeniorRound
+\end{itemize}
+\end{itemize}
+In seguito sono state esplicitate le disgiunzioni tra le varie classi. In sintesi, un assioma di disgiunzione tra due classi indica che un elemento non può essere istanza di entrambe le classi. Nel caso in esame ad esempio è utile specificare che \textit{JuniorRound} e \textit{SeniorRound} (entrambi sottoclassi di Round) sono disgiunte, non ci potrà quindi essere un’istanza che è allo stesso tempo \textit{JuniorRound} e \textit{SeniorRound}.
+\\\par
+Infine vengono importate le classi \textit{City} e \textit{SportsEvent} da \textbf{DBpedia}, e \textit{Person} e \textit{Organization} da \textbf{FOAF}. Sono incluse anche alcune classi automaticamente aggiunte dopo l’import di \textbf{FOAF}, che tuttavia non sono utilizzate.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{Classi.JPG}
+	\caption{Gerarchia delle classi}
+\end{figure}
+\clearpage
+\section{Modellazione delle Object Property e Data Property}
+Di seguito viene mostrato l’insieme delle Object Property. Sono incluse anche alcune proprietà automaticamente aggiunte dopo l’import di FOAF, che tuttavia non sono utilizzate.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{ObjectProperty.JPG}
+	\caption{Object Properties}
+\end{figure}
+\clearpage
+Per ogni Object property si definisce il Domain e il range. Se una proprietà è l'inversa di una già definita, è sufficiente riempire il campo Inverse Of, selezionando la proprietà precedente: il reasoner sarà in grado di riconoscere il rispettivo domain e range tramite inferenza come vedremo in seguito.
+\\\par
+Di seguito viene riportato l’insieme delle Data Property. Come per le Object Property, anche qua vengono incluse automaticamente alcune proprietà dopo l’import di FOAF. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{DataProperty.JPG}
+	\caption{Data Properties}
+\end{figure}
+\section{Restrizioni su Object Property e Data Property}
+Dopo aver definito la gerarchia delle classi e le proprietà con i relativi domain e range, sono state applicate le corrette restrizioni sulle cardinalità delle proprietà. Di seguito viene riportato l'esempio sulla classe \textit{TrackDay} che ha le seguenti caratteristiche:
+\begin{itemize}
+\item Deve essere organizzata esattamente da 1 \textit{Manager};
+\item Deve avere esattamente 1 data di svolgimento;
+\item Deve avere esattamente 1 \textit{RaceCircuit} dove avverrà l’evento;
+\item Deve avere almeno un \textit{Round} di giri in pista;
+\item Deve avere almeno un \textit{Participant} all’evento;
+\item Deve avere un costo espresso tramite \textit{Price};
+\item Deve avere esattamente un nome.
+\end{itemize}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{Restrizioni.JPG}
+	\caption{Classe \textit{TrackDay} nel dettaglio, con le sue restrizioni}
+\end{figure}
+\clearpage
+\section{Inserimento individui}
+L'inserimento degli individui corrisponde alla creazione delle varie istanze delle varie classi. Per ogni individuo è possibile inserire delle asserzioni sulle proprietà, collegando i diversi individui tramite le proprietà precedentemente definite. In figura viene mostrata la sezione di Protégé dedicata alla creazione e modifica degli individui.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{Individui.JPG}
+	\caption{Individui dell’ontologia, con dettaglio su un individuo di tipo \textit{TrackDay}}
+\end{figure}
+\clearpage

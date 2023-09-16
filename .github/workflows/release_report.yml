@@ -1,0 +1,26 @@
+name: New report release from tag
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*-report' # Push events to matching v*-report, i.e. v1.0-report, v20.15.10-report
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Github Action for LaTeX
+        id: latex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Report/Report.tex
+          continue_on_error: true
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Report.pdf
+
